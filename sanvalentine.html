@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Serás mi Valentine? 🌸</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #f8c3d3, #e4aad1);
+      color: #333;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #ff78a5;
+      animation: fadeInDown 2s ease;
+    }
+    p {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      color: #555;
+    }
+    .button-container {
+      margin-top: 30px;
+    }
+    .button {
+      background: #ffb3c6;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+      margin: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .button:hover {
+      background: #ff8ba7;
+      transform: scale(1.1);
+    }
+    .gif-container img {
+      width: 150px;
+      margin: 10px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 ¡Hola! 🌸</h1>
+  <p>Quería hacer algo especial para ti... porque eres una persona increíble.  
+     ¿Te gustaría pasar un momento bonito este 14 de febrero? 💖</p>
+
+  <div class="gif-container">
+    <img src="476b85783b816fef1d2c56ebe247cc0f.gif" alt="Osito 1">
+    <img src="a53054639df3a2e59520ba089a8544fd.gif" alt="Osito 2">
+    <img src="bb6553860420324d73f43ded9cdd82a3.gif" alt="Osito 3">
+    <img src="d2f790978f11b5bb2f1ff38124a9a47a.gif" alt="Osito 4">
+    <img src="efce56eba8ffb9e07a7afc0751ad58ed.gif" alt="Osito 5">
+  </div>
+
+  <div class="button-container">
+    <button class="button" onclick="aceptar()">Sí, claro 🌷</button>
+    <button class="button" onclick="rechazar()">No... 🙄</button>
+  </div>
+
+  <audio id="miCancion" src="Lana Del Rey - Cinnamon Girl (español).mp3"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  <script>
+    let noCount = 0;
+
+    function aceptar() {
+      alert("¡Qué emoción! 🌸 Será un día inolvidable 💖");
+      lanzarConfetti();
+      reproducirMusica();
+    }
+
+    function rechazar() {
+      noCount++;
+      if (noCount === 1) {
+        alert("¿Estás seguro? 🥺");
+      } else if (noCount === 2) {
+        alert("Vamos, será divertido. 🌷💕");
+      } else {
+        lanzarConfetti();
+        alert("¡No puedes decir que no a esto! 🎉");
+        noCount = 0;
+      }
+    }
+
+    function lanzarConfetti() {
+      confetti({
+        particleCount: 150,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+    }
+
+    function reproducirMusica() {
+      const audio = document.getElementById('miCancion');
+      audio.play();
+    }
+  </script>
+</body>
+</html>
